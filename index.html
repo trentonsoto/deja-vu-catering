@@ -5,34 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Deja Vu Catering</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#home" class="logo">
-        <img src="assets/logo.png" alt="Deja Vu Catering logo">
-      </a>
-      <nav class="nav">
-        <a href="#home">Home</a>
-        <a href="#menu">Menu</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <a href="#home" class="logo">Deja Vu Catering</a>
+      <div class="header-right">
+        <nav class="nav">
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <a href="#menu" class="btn btn-pill">View Menu</a>
+      </div>
     </div>
   </header>
 
   <section id="home" class="hero">
-    <div class="container hero-inner">
-      <p class="eyebrow">Home Cooked &middot; Made With Love</p>
-      <h1>Deja Vu Catering</h1>
-      <p class="hero-sub">Comfort food catering for your next event, party, or preorder pickup.</p>
-      <a href="#menu" class="btn">View Menu</a>
+    <div class="container">
+      <div class="hero-top">
+        <h1 class="hero-headline">Deja Vu<br>Catering</h1>
+        <p class="hero-sub">Comfort food catering for your next event, party, or preorder pickup.</p>
+      </div>
+
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-clock" id="liveClock">--:--:-- --</span>
+          <span class="meta-label">Caterer + Chef</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Based In</span>
+          <span class="meta-value">Central Jersey</span>
+        </div>
+        <div class="meta-item meta-item-status">
+          <span class="status-dot"></span>
+          <a href="#menu">Available Now</a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="assets/food-hero.jpg" alt="Packed Deja Vu Catering meal containers with chicken, shrimp, rice, and green beans">
+      </div>
     </div>
   </section>
 
+  <!--
   <section id="menu" class="menu">
     <div class="container">
       <p class="eyebrow">This Week's</p>
@@ -55,7 +74,9 @@
       </div>
     </div>
   </section>
+  -->
 
+  <!--
   <section id="about" class="about">
     <div class="container about-inner">
       <div>
@@ -66,7 +87,9 @@
       </div>
     </div>
   </section>
+  -->
 
+  <!--
   <section id="contact" class="contact">
     <div class="container contact-inner">
       <p class="eyebrow">Get In Touch</p>
@@ -79,6 +102,7 @@
       </ul>
     </div>
   </section>
+  -->
 
   <footer class="site-footer">
     <div class="container">
@@ -87,5 +111,14 @@
     </div>
   </footer>
 
+  <script>
+    function updateClock() {
+      const el = document.getElementById('liveClock');
+      if (!el) return;
+      el.textContent = new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
 </body>
 </html>
