@@ -5,6 +5,14 @@ if (heroHeadline) {
   };
   updateHeroScale();
   window.addEventListener('scroll', updateHeroScale, { passive: true });
+
+  const homeLink = heroHeadline.querySelector('a');
+  if (homeLink) {
+    homeLink.addEventListener('click', (event) => {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'instant' });
+    });
+  }
 }
 
 const navToggle = document.getElementById('navToggle');
